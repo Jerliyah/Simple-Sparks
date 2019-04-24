@@ -4,7 +4,7 @@
 section.circle-towers {
     --bg-color: #F2F2F2;
     --dot-color: #212121;
-    --unit: 4.15vh;
+    --unit: calc(1vw + 2vh);
     --gap: calc( var(--unit) / 4 );
 }
 
