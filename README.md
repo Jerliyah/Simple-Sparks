@@ -47,7 +47,7 @@ Inspired by this --> [Web Graphics Experiments webpage](https://experiments.p5ah
 
 
 ## 3 Towers
-Inspired by this --> [Ssal](https://fromdusttominimal.tumblr.com/post/184204864668/ssal) <br>
+Re-creaetion of this --> [Ssal](https://fromdusttominimal.tumblr.com/post/184204864668/ssal) <br>
 Presented by: [From Dust to Minimal](https://fromdusttominimal.tumblr.com/)<br>
 Found on: [Tumblr](https://www.tumblr.com/)
 
