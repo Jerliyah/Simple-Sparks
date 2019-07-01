@@ -1,7 +1,7 @@
-# Simple Sparks
+# :: Simple Sparks ::
 Small projects that I think are interesting
 
-I usually stumble upon an image, animation, or experience that leaves an impression - so here are my recreations of those works
+I usually stumble upon an image, animation, or experience that leaves an impression - so here are my re-creations of those works
 
 <br/><br/>
 
