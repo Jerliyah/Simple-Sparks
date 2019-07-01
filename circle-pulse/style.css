@@ -1,0 +1,117 @@
+
+/* :: Presentation (optional) :: */
+body {
+    background: linear-gradient(to bottom,  #485563, #29323c );
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* :: Customizer :: */
+#circle-pulse {
+    --color: white;
+    --size-unit: 5vw;
+    --growth-factor: 1.4;
+    --time-unit: 2s;
+}
+
+/* ----------------------------------------------------- */
+
+/* :: Stay static styling :: */
+
+#circle-pulse {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#circle-pulse * {
+    height: var(--size);
+    width: var(--size);
+
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#circle-pulse *:not(.core) {
+    border: var(--color) solid var(--size-unit);
+    animation: fading var(--time-unit) linear forwards infinite,
+                grow var(--time-unit) linear forwards infinite;
+}
+
+#circle-pulse .core {
+    --size: var(--size-unit);
+    background: var(--color);
+
+    animation: fading var(--time-unit) linear forwards infinite,
+               core-pulse var(--time-unit) linear forwards infinite;
+}
+
+
+#circle-pulse .outer-1 {
+    --size: calc( var(--size-unit) * 4 );
+    --max-opacity: 0.5;
+
+    opacity: 0;
+    border-width: calc( var(--size-unit) / 2 );
+
+    animation-delay: calc( var(--time-unit) / 6.67);
+}
+
+#circle-pulse .outer-2 {
+    --size: calc( var(--size-unit) * 8 );
+    --max-opacity: 0.25;
+
+    opacity: 0;
+    border-width: calc( var(--size-unit) / 3 );
+
+    animation-delay: calc( var(--time-unit) / 3.34);
+}
+
+@keyframes fading {
+    0% {
+        opacity: 0;
+    }
+    10%, 15% {
+        opacity: var(--max-opacity);
+    }
+    80%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes core-pulse {
+    0% {
+        height: var(--size);
+        width: var(--size);
+    }
+    10% {
+        height: calc( var(--size) * calc( var(--growth-factor) * 1.5 ));
+        width: calc( var(--size) * calc( var(--growth-factor) * 1.5 ));
+    }
+    100% {
+        height: var(--size);
+        width: var(--size);
+    }
+}
+
+@keyframes grow {
+    0% {
+        height: var(--size);
+        width: var(--size);
+    }
+    100% {
+        height: calc( var(--size) * var(--growth-factor) );
+        width: calc( var(--size) * var(--growth-factor) );
+    }
+}
+
+
+

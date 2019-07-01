@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    display: inline-block;
+}
+
+#cosmos-page {
+    height: 100vh;
+    width: 100vw;
+    background: #444349 url("../assets/stardust.png");
+    display: flex;
+}
+
+#cosmos-container {
+    margin: auto;
+    font-family: 'Couisine', sans-serif;
+    color: white;
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Easily change sizes for everything */
+    transform: scale(0.7)
+}
+
+#background-circle,
+span.o {
+    border: 1.2vw solid white;
+    border-radius: 100%;
+    z-index: 1;
+    
+}
+
+#background-circle {
+    z-index: 1;
+    position: absolute;
+    height: 25vw;
+    width: 25vw;
+    animation: rotate-and-breathe 6s linear infinite, 
+    coloring 2s linear infinite alternate;
+}
+@keyframes rotate-and-breathe {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-180deg) scale(1.2)
+    }
+
+    100% {
+        transform: rotate(-360deg) scale(1);
+    }
+}
+@keyframes coloring {
+    from { background-color: rgba(0,0,0, 0)          }
+
+    to   { background-color: rgba(173, 216, 230, .5) }
+    
+}
+
+
+span.o {
+    height: 5vw;
+    width: 5vw;
+    top: calc(50% - 3.5vw);
+    background: #444349;
+}
+span.o:first-child {
+    position: absolute;
+    left: -4vw;
+    
+}
+span.o:last-child {
+    position: absolute;
+    right: -4vw;
+}
+
+#text {
+    z-index: 2;
+    font-weight: bold;
+    animation: text-spacing 6s linear infinite alternate;
+}
+@keyframes text-spacing {
+    to {
+        letter-spacing: 0;
+    }
+
+    from {
+        letter-spacing: 1vw;
+    }
+}
+
+span.space {
+    width: 1em;
+}
+
+
+

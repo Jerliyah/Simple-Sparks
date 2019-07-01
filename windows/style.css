@@ -1,0 +1,38 @@
+/* :: Optional :: */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* :: Customizer :: */
+.windows-scene {
+    --height: 100vh;
+    --width: 1400px;
+
+    /* NOTE: Change the background scene in the html */
+    --foreground: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+    --window-frame: linear-gradient(to top, #373b44, #4286f4);
+}
+
+
+
+/* :: Static Styling :: */
+.windows-scene {
+    position: relative;
+    box-sizing: border-box;
+    height: var(--height);
+    width: 100%;
+    overflow: hidden;
+
+    background-color: #333333; /*default*/
+    background: var(--foreground);
+}
+
+/* TODO: Add padding based on var(--width) */
+
+.windows-scene > .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
