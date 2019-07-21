@@ -46,12 +46,12 @@ Inspired by this --> [Web Graphics Experiments webpage](https://experiments.p5ah
 <br/><br/><br/><br/>
 
 
-## 3 Towers
+## Three Towers
 Inspired by this --> [Ssal](https://fromdusttominimal.tumblr.com/post/184204864668/ssal) <br>
 Presented by: [From Dust to Minimal](https://fromdusttominimal.tumblr.com/)<br>
 Found on: [Tumblr](https://www.tumblr.com/)
 
-![3 Towers Project screenshot. There are three transparent columns, each containing 4 dots where the dots become larger the further down they are in the column, the column in the middle has slightly large dots than those beside it](./3-Towers/screenshot.png)
+![3 Towers Project screenshot. There are three transparent columns, each containing 4 dots where the dots become larger the further down they are in the column, the column in the middle has slightly large dots than those beside it](./three-Towers/screenshot.png)
 
 ### Features
 - Minimalist
