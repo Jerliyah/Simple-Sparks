@@ -23,6 +23,11 @@ const projects = [
         name: '3 Towers',
         folder_name: 'three-towers',
         screenshot_path: '/screenshot.png'
+    },
+    {
+        name: 'Black Card',
+        folder_name: 'black-card',
+        screenshot_path: '/screenshot.gif'
     }
 
 ]

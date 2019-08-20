@@ -1,0 +1,101 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #212121;
+}
+
+/* ============= */
+
+section.black-card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* -------------------- */
+
+.accent-square {
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    background: linear-gradient(to right, white, #333333);
+    transform: rotate(30deg);
+    border: 1px solid black;
+    opacity: 0;
+
+    --target-left: 30%;
+    left: var(--target-left);
+    top: 39%;
+
+    animation: accent-effect 4s alternate infinite ease;
+}
+
+.accent-square .edge {
+    height: 100%;
+    width: 1px;
+    background:  #666666;
+    position: absolute;
+    right: 0;
+}
+
+@keyframes accent-effect {
+    0% {
+        opacity: 0;
+        left: 150%;
+    }
+    25% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+        left: var(--target-left);
+    }
+    100% {
+        opacity: 1;
+        left: var(--target-left);
+    }
+}
+
+/* ------------------------- */
+.square {
+    border: 1px solid black;
+    height: 300px;
+    width: 600px;
+    transform: rotate(30deg);
+    background: linear-gradient(to right, #333333, black);
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    --target-top: 40%;
+    left: 25%;
+    top: var(--target-top);
+
+    animation: card-effect 4s alternate infinite ease;
+}
+
+.square .edge {
+    height: 100%;
+    width: 1px;
+    background:  #808080;
+    border-right: 1px solid #212121;
+    position: absolute;
+}
+
+h1 {
+    color: white;
+    margin-left: 1em;
+}
+@keyframes card-effect {
+    0% {
+        top: 150%;
+    }
+    50% {
+        top: var(--target-top);
+    }
+    100% {
+        top: var(--target-top);
+    }
+}

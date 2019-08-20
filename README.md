@@ -56,3 +56,19 @@ Found on: [Tumblr](https://www.tumblr.com/)
 ### Features
 - Minimalist
 
+<br/><br/><br/><br/>
+
+
+## Black Card
+
+![Black card demo. The scene is dark, a black card with that says '::J::' (my trademark) in white letters moves from the bottom of the screen to the center. As it moves, a white gradient square fades in a slips just below the card. The view is relatively simple, but what is most striking is that the gradients on the squares create perception that there is a light source](./black-card/screenshot.gif)
+
+### Features
+- Styling creates the perception of a lighted scene
+
+<br/><br/><br/><br/>
+
+
+
+
+
