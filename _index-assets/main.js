@@ -21,7 +21,7 @@ const projects = [
     },
     {
         name: '3 Towers',
-        folder_name: '3-towers',
+        folder_name: 'three-towers',
         screenshot_path: '/screenshot.png'
     }
 
