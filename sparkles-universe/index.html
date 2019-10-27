@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sparkle Universe</title>
+</head>
+<body>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #212121;
+            background-image: url('beach-a-palooza_background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* -------------------------- */
+
+        section.sparkles {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .sparkle {
+            /* :: note :: variables set with js */
+            --size:      0px;
+            --hue:       0  ;
+            --opacity:   0  ;
+            --from-top:  0% ;
+            --from-left: 0% ;
+            --delay:     0ms;
+            
+            transform: rotate(45deg) 
+                        skew(15deg, 15deg);
+            height: var(--size);
+            width:  var(--size);
+            background: hsla(
+                            var(--hue),
+                            50%,
+                            80%,
+                            var(--opacity) );
+            position: absolute;
+            top:  var(--from-top);
+            left: var(--from-left);
+            animation: pulse 4s ease-in-out alternate infinite;
+            animation-delay: var(--delay)
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(45deg) skew(15deg, 15deg) 
+                    scale(1)
+            }
+            50% {
+                transform: rotate(45deg) skew(15deg, 15deg) 
+                    scale(0.8)
+            }
+            100% {
+                transform: rotate(45deg) skew(15deg, 15deg) 
+                    scale(1.1)
+            }
+        }
+    </style>
+
+    <!-- =============================== -->
+
+    <section class="sparkles"></section>
+
+    <!-- =============================== -->
+
+    <script>
+        
+        add_sparkles_to('section.sparkles')
+
+        function add_sparkles_to(selector) {
+            
+            // :: prepare :: //
+            element = document.querySelector(selector)
+
+            if( element.parentElement.style.position === 'static' ) {
+                console.warn('section.sparkles parent element has a static position, this may cause strange visual behavior.')
+            }
+            
+            element.insertAdjacentHTML('beforeend', '<!-- :: sparkles :: -->')
+        
+            // :: define :: //
+            let density = Math.round( (window.innerWidth * window.innerHeight) / 25000 ),
+                size_range    = [8, 30]   ,
+                hue_range     = [0, 360]  ,
+                opacity_range = [0.2, 0.5],  
+                delay_range   = [-3000, 3000]
+                integer_opacity_range = opacity_range.map( f => f * 10 )
+            
+            // :: generate :: //
+            let counter = 0
+            
+            while( counter < density ) {
+                let random_size    = get_random_integer(...size_range),
+                    random_hue     = get_random_integer(...hue_range) ,
+                    random_delay   = get_random_integer(...delay_range) ,
+                    
+                    random_from_left = get_random_integer(random_size, window.innerWidth - (random_size * 2) ),
+                    random_from_top  = get_random_integer(random_size, window.innerHeight - (random_size * 2) ),
+                    
+                    random_integer_opacity = get_random_integer(...integer_opacity_range),
+                    random_opacity         = random_integer_opacity / 10
+                
+                // :: populate :: //
+                element.insertAdjacentHTML('beforeend',
+                    `
+                    <div class="sparkle" 
+                        aria-hidden="true"
+                        style="
+                            --hue:  ${random_hue};
+                            --size: ${random_size}px;
+                            --delay: ${random_delay}ms;                 
+                            --opacity: ${random_opacity};
+                            --from-top: ${random_from_top}px;
+                            --from-left: ${random_from_left}px;
+                            
+                        ">
+                    </div>
+                    ` 
+                )
+                
+                counter++
+            }
+            
+
+            }
+
+            function get_random_integer(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+    </script>
+</body>
+</html>

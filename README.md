@@ -68,9 +68,16 @@ Found on: [Tumblr](https://www.tumblr.com/)
 
 <br/><br/><br/><br/>
 
+
+## Sparkles Universe
+Inspired by the animated show, [Steven Universe](https://steven-universe.fandom.com/wiki/Steven_Universe_(TV_series))
+![A background scene of a beach with an outdoor concert setup. A banner hanging from the stage says "beach-a-palooza". Layered on top of this scene are various, semi-transparent, diamond-shaped sparkles. Each sparkle is a different size, although all are relatively small, and they are slowly pulsing in size at random times.](./sparkles-universe/screenshot.gif)
+
+
+
 ## Coming Soon / Baldaŭ / Próximamente / Bientôt disponible
 ### Universe Sparkles
-
+(https://codepen.io/Jerliyah/pen/rNNwvzX?editors=0110)
 
 
 
